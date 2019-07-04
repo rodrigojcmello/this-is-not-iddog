@@ -11,8 +11,7 @@ import fs from 'local-storage';
 import routes from './routes';
 import styled from '../assets/styled-components';
 
-const TelaContainer = styled.div`
-  height: 100vh;
+const ScreenContainer = styled.div`
   position: relative;
   width: 100vw;
 `;
@@ -22,7 +21,7 @@ function Routes(props: RouteProps): JSX.Element {
   return (
     <Route
       render={(): JSX.Element => (
-        <TelaContainer>
+        <ScreenContainer>
           <Switch location={location}>
             {routes.map(
               ({
@@ -49,7 +48,7 @@ function Routes(props: RouteProps): JSX.Element {
               }
             )}
           </Switch>
-        </TelaContainer>
+        </ScreenContainer>
       )}
     />
   );

@@ -1,3 +1,5 @@
+import ls from 'local-storage';
+
 async function api<R, P>(
   method: 'get' | 'post',
   endpoint: string,
@@ -15,7 +17,8 @@ async function api<R, P>(
     {
       method,
       headers: {
-        'Content-type': 'application/json; charset=utf-8'
+        'Content-type': 'application/json; charset=utf-8',
+        Authorization: ls('token')
       }
     }
   );

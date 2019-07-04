@@ -39,7 +39,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screens/Signup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/request/services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -60,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/request/services/signup" />
       <recent name="$PROJECT_DIR$/src/telas/Principal/components/Sidebar/components/NewListModal" />
       <recent name="$PROJECT_DIR$/src/components/Form" />
       <recent name="$PROJECT_DIR$/src/telas/Principal/componentes/Painel/componentes/Lista" />
       <recent name="$PROJECT_DIR$/src/telas/Principal/componentes/Painel/componentes/ModalNovaLista/componentes/Conteudo" />
-      <recent name="$PROJECT_DIR$/src/telas/Principal/componentes/Painel/componentes/ModalNovaLista/componentes" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/src/genericos/Entrada/estilo.tsx" />
@@ -74,11 +74,11 @@
       <recent name="$PROJECT_DIR$/src/telas/Principal/componentes/Painel/componentes/Lista/types.tsx" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/request/services" />
       <recent name="$PROJECT_DIR$/src/screens/Signup" />
       <recent name="$PROJECT_DIR$/src/screens" />
       <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/assets/styled-components" />
-      <recent name="$PROJECT_DIR$/src/genericos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,7 +248,7 @@
       <workItem from="1561752386348" duration="32940000" />
       <workItem from="1561838809812" duration="20212000" />
       <workItem from="1562116748501" duration="4612000" />
-      <workItem from="1562200273072" duration="11813000" />
+      <workItem from="1562200273072" duration="16296000" />
     </task>
     <task id="LOCAL-00007" summary="...">
       <created>1554650620639</created>

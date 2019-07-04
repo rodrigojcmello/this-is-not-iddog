@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Formik, FormikProps } from 'formik';
 import TextInput from '../../components/Form/TextInput';
 import { FormErros, FormProps } from './types';
-import { signup } from '../../request/services/signup';
+import { postSignup } from '../../request/services/signup';
 
 function SignUp(): JSX.Element {
   return (
@@ -21,7 +21,7 @@ function SignUp(): JSX.Element {
           return errors;
         }}
         onSubmit={(values): void => {
-          signup(values.email).then();
+          postSignup(values.email).then();
         }}
       >
         {({
