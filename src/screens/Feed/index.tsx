@@ -27,6 +27,7 @@ function Feed(props: RouteChildrenProps<{ category: string }>): JSX.Element {
         });
         setFeed(newList);
         setPageList(newList.slice(0, 30));
+        setPage(0);
       }
     })();
   }, [props]);
