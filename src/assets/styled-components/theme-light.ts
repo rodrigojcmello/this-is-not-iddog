@@ -22,12 +22,12 @@ const themeLight = {
       bg: '#a6a6a6' // 65% brightness
     },
     4: {
-      text: '#808080', // 50% brightness // TODO: ajustar
+      text: '#808080', // 50% brightness
       bg: '#808080' // 50% brightness
     },
     5: {
-      text: '#4a4a4a', // 29% brightness
-      bg: '#4d4d4d' // 30% brightness
+      text: '#333333', // 20% brightness
+      bg: '#333333' // 20% brightness
     }
   },
   success: {
