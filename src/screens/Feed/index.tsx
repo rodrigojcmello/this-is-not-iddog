@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import { getFeed } from '../../request/services/feed';
 import { SuccessResFeed } from '../../request/services/feed/types';
+import { Content, Thumb } from './style';
 
 function Feed(): JSX.Element {
   const [feed, setFeed] = useState([]);
@@ -25,17 +26,15 @@ function Feed(): JSX.Element {
   });
 
   return (
-    <div>
+    <Content>
       {feed.map(
         ({ id, image }): JSX.Element => {
           return (
-            <div key={id}>
-              <img src={image} />
-            </div>
+            <Thumb key={id} style={{ backgroundImage: `url(${image})` }} />
           );
         }
       )}
-    </div>
+    </Content>
   );
 }
 

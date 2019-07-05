@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cc6ea02-dbdd-423a-97aa-d1d7afd032a3" name="Default Changelist" comment="" />
+    <list default="true" id="9cc6ea02-dbdd-423a-97aa-d1d7afd032a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screens/Feed/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Feed/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Feed/index.tsx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,20 +253,7 @@
       <workItem from="1561838809812" duration="20212000" />
       <workItem from="1562116748501" duration="4612000" />
       <workItem from="1562200273072" duration="16296000" />
-    </task>
-    <task id="LOCAL-00007" summary="...">
-      <created>1554650620639</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1554650620639</updated>
-    </task>
-    <task id="LOCAL-00008" summary="...">
-      <created>1554652700957</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1554652700957</updated>
+      <workItem from="1562236041512" duration="2211000" />
     </task>
     <task id="LOCAL-00009" summary="...">
       <created>1554674198234</created>
@@ -593,7 +584,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561905060980</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="feed request">
+      <created>1562236079618</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1562236079619</updated>
+    </task>
+    <task id="LOCAL-00057" summary="feed request">
+      <created>1562281547709</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1562281547709</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView">
@@ -624,7 +629,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="troca de cores" />
     <MESSAGE value="corrigido bug ao criar uma lista em um grupo" />
     <MESSAGE value="modal" />
     <MESSAGE value="painel div" />
@@ -649,7 +653,8 @@
     <MESSAGE value="Added react-spring" />
     <MESSAGE value="ajustes no tema" />
     <MESSAGE value="Added dark and light themes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dark and light themes" />
+    <MESSAGE value="feed request" />
+    <option name="LAST_COMMIT_MESSAGE" value="feed request" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
