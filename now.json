@@ -3,7 +3,7 @@
     "name": "iddog",
     "builds": [
         {
-            "src": "package.json",
+            "src": "/dist",
             "use": "@now/node"
         }
     ],
