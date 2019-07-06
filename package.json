@@ -7,7 +7,8 @@
     "main": "dist/index.html",
     "scripts": {
         "start": "webpack-dev-server",
-        "build": "webpack --env.NODE_ENV=production"
+        "build": "webpack --env.NODE_ENV=production",
+        "now-build": "webpack --env.NODE_ENV=production"
     },
     "dependencies": {
         "formik": "^1.5.7",
