@@ -1,12 +1,12 @@
 {
     "version": 2,
-    "name": "idgod",
+    "name": "iddog",
     "builds": [
         {
             "src": "package.json",
             "use": "@now/static-build",
             "config": {
-                "distDir": "build"
+                "distDir": "dir"
             }
         }
     ],
