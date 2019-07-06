@@ -31,4 +31,7 @@ export const ModalContent = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
+  @media (min-width: ${({ theme }): number => theme.sizes.mobile}px) {
+    background-size: inherit;
+  }
 `;
