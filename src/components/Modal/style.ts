@@ -12,12 +12,13 @@ export const ModalContainer = styled(animated.div)`
   width: 100%;
 `;
 
-export const Container = styled.div`
+export const Container = styled(animated.div)`
   background-color: ${({ theme }): string => theme.colors.contrast[0].bg};
   border-radius: 6px;
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
   height: auto;
-  width: 320px;
+  max-width: 640px;
+  width: 100%;
 `;
 
 export const Header = styled.div`
@@ -48,28 +49,6 @@ export const Close = styled.button`
     fill: ${({ theme }): string => theme.colors.contrast[5].bg};
     height: 16px;
     width: 16px;
-  }
-`;
-
-export const ModalConteudo = styled.div`
-  padding: 16px 24px;
-`;
-
-export const ModalBotao = styled.button`
-  background: none;
-  border-top: 1px solid ${({ theme }): string => theme.cor1Claro};
-  border: 0;
-  color: ${({ theme }): string => theme.cor1};
-  cursor: pointer;
-  font-size: 14px;
-  height: 38px;
-  outline: none;
-  padding: 0;
-  transition: all 0.3s ease-out;
-  width: 100%;
-  &:focus {
-    border-top-color: ${({ theme }): string => theme.cor2Claro};
-    color: ${({ theme }): string => theme.cor2};
   }
 `;
 

@@ -6,8 +6,7 @@ import React, {
   useState
 } from 'react';
 import { createPortal } from 'react-dom';
-import { FormattedMessage } from 'react-intl';
-import { useSpring, config,  } from 'react-spring';
+import { config, useSpring } from 'react-spring';
 import IconeDelete from '../../assets/svg/simple-small/delete.svg';
 import {
   Background,
@@ -24,7 +23,7 @@ const el = document.createElement('div');
 
 const modalDiv = document.getElementById('modal');
 
-function Modal({ content, id, title }: Props): ReactPortal {
+function Modal({ content, id, title, afterClose }: Props): ReactPortal {
   const [close, setClose] = useState(false);
   const [, dispatch] = useModalValue();
 
@@ -36,6 +35,7 @@ function Modal({ content, id, title }: Props): ReactPortal {
   }, []);
 
   const closeModal = useCallback((): void => {
+    afterClose();
     setClose(true);
   }, []);
 
@@ -48,19 +48,31 @@ function Modal({ content, id, title }: Props): ReactPortal {
     }
   }, [close]);
 
-  const props = useSpring({
+  const propsModal = useSpring({
     opacity: close ? 0 : 1,
-    from: { opacity: close ? 1 : 0 },
-    config: close ? config.gentle : config.slow,
+    from: {
+      opacity: close ? 1 : 0
+    },
+    config: close ? config.stiff : config.default,
     onRest: removeModal
   });
 
+  const propsContainer = useSpring({
+    opacity: close ? 0 : 1,
+    transform: close ? 'scale(0.5)' : 'scale(1)',
+    from: {
+      opacity: close ? 1 : 0,
+      transform: close ? 'scale(1)' : 'scale(0.5)'
+    },
+    config: close ? config.stiff : config.default
+  });
+
   return createPortal(
-    <ModalContainer style={props}>
-      <Container>
+    <ModalContainer style={propsModal}>
+      <Container style={propsContainer}>
         <Header>
           <Title>
-            <FormattedMessage id={title} />
+            {title}
             <Close onClick={closeModal}>
               <IconeDelete />
             </Close>

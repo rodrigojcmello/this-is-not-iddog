@@ -20,3 +20,10 @@ export const Thumb = styled.div`
   border-radius: ${({ theme }): number => theme.sizes.borderRadius.small}px;
   height: 150px;
 `;
+
+export const ModalContent = styled.div`
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+`;

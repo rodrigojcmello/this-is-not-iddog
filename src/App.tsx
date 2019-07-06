@@ -17,16 +17,16 @@ const initialTheme: Theme = window.matchMedia('(prefers-color-scheme: dark)')
 
 function App(): JSX.Element {
   return (
-    <ModalProvider initialState={[]} reducer={modalReducer}>
-      <ThemeModeProvider initialState={initialTheme} reducer={themeReducer}>
+    <ThemeModeProvider initialState={initialTheme} reducer={themeReducer}>
+      <ModalProvider initialState={[]} reducer={modalReducer}>
         <>
           <Router history={history}>
             <Routes />
           </Router>
           <GlobalStyle />
         </>
-      </ThemeModeProvider>
-    </ModalProvider>
+      </ModalProvider>
+    </ThemeModeProvider>
   );
 }
 

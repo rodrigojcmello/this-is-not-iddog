@@ -1,32 +1,49 @@
 import React, { EffectCallback, useCallback, useEffect, useState } from 'react';
-import uniqid from 'uniqid';
+import { Link, NavLink } from 'react-router-dom';
 import { RouteChildrenProps } from 'react-router';
 import { getFeed } from '../../request/services/feed';
-import { SuccessResFeed } from '../../request/services/feed/types';
-import { Content, InfinityScroll, Thumb } from './style';
+import { Content, InfinityScroll, ModalContent, Thumb } from './style';
+import Modal from '../../components/Modal';
 import { history } from '../../utils/history';
+import { useModalValue } from '../../store/modal/context';
 
-function Feed(props: RouteChildrenProps<{ category: string }>): JSX.Element {
-  const [feed, setFeed] = useState([]);
+function Feed(props: RouteChildrenProps): JSX.Element {
+  const [feedAll, setFeedAll] = useState([]);
+  const [feedById, setFeedById] = useState([]);
   const [page, setPage] = useState(0);
   const [pageList, setPageList] = useState([]);
+  const [modal, setModal] = useModalValue();
+
+  const params = new URLSearchParams(props.location.search);
+
+  useEffect((): void => {
+    if (params.get('id')) {
+      setModal({
+        type: 'ADD_MODAL',
+        modal: 'zoomIn'
+      });
+    }
+  }, [props]);
+  
+  console.log(modal)
 
   useEffect((): void => {
     (async (): Promise<void> => {
-      const { category } = props.match.params;
-      const list = await getFeed(category || 'husky');
-      if ((list as SuccessResFeed).category) {
-        const newList = (list as SuccessResFeed).list.map((image): {
-          image: string;
-          id: string;
-        } => {
-          return {
-            id: uniqid(),
-            image
-          };
+      const resFeed = await getFeed(params.get('category') || 'husky');
+      if ('category' in resFeed) {
+        const byId = [];
+        const all = [];
+        resFeed.list.forEach((image): void => {
+          const id = image
+            .split('/')
+            .reverse()[0]
+            .split('.')[0];
+          byId[id] = image;
+          all.push(id);
         });
-        setFeed(newList);
-        setPageList(newList.slice(0, 30));
+        setFeedAll(all);
+        setFeedById(byId);
+        setPageList(all.slice(0, 30));
         setPage(0);
       }
     })();
@@ -41,7 +58,7 @@ function Feed(props: RouteChildrenProps<{ category: string }>): JSX.Element {
   }, [page]);
 
   useEffect((): void => {
-    setPageList(feed.slice(0, 30 * (page + 1)));
+    setPageList(feedAll.slice(0, 30 * (page + 1)));
   }, [page]);
 
   useEffect((): EffectCallback => {
@@ -55,51 +72,60 @@ function Feed(props: RouteChildrenProps<{ category: string }>): JSX.Element {
     <Content>
       <ul>
         <li>
-          <button
-            type="button"
-            onClick={(): void => {
-              history.push('/feed/husky');
-            }}
-          >
+          <NavLink to={{ pathname: '/feed', search: '?category=husky' }}>
             husky
-          </button>
+          </NavLink>
         </li>
         <li>
-          <button
-            type="button"
-            onClick={(): void => {
-              history.push('/feed/labrador');
-            }}
-          >
+          <NavLink to={{ pathname: '/feed', search: '?category=labrador' }}>
             labrador
-          </button>
+          </NavLink>
         </li>
         <li>
-          <button
-            type="button"
-            onClick={(): void => {
-              history.push('/feed/hound');
-            }}
-          >
+          <NavLink to={{ pathname: '/feed', search: '?category=hound' }}>
             hound
-          </button>
+          </NavLink>
         </li>
         <li>
-          <button type="button" onClick={(): void => history.push('/feed/pug')}>
+          <NavLink to={{ pathname: '/feed', search: '?category=pug' }}>
             pug
-          </button>
+          </NavLink>
         </li>
       </ul>
+      {modal.indexOf('zoomIn') > -1 && (
+        <Modal
+          title={params.get('id')}
+          id="zoomIn"
+          afterClose={(): void => {
+            history.push(`/feed?category=${params.get('category')}`);
+          }}
+          content={
+            <ModalContent
+              style={{
+                backgroundImage: `url(${feedById[params.get('id')]})`
+              }}
+            />
+          }
+        />
+      )}
       <InfinityScroll>
         {pageList.map(
-          ({ id, image }): JSX.Element => {
+          (id): JSX.Element => {
             return (
-              <Thumb
+              <Link
                 key={id}
-                style={{
-                  backgroundImage: `url(${image})`
+                to={{
+                  pathname: '/feed',
+                  search: `?category=${params.get('category') ||
+                    'husky'}&id=${id}`
                 }}
-              />
+              >
+                <Thumb
+                  style={{
+                    backgroundImage: `url(${feedById[id]})`
+                  }}
+                />
+              </Link>
             );
           }
         )}

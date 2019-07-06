@@ -16,15 +16,8 @@ const routes: Config[] = [
   },
   {
     component: Feed,
-    path: '/feed/:category',
-    id: uniqid(),
-    isPrivate: true
-  },
-  {
-    component: Feed,
     path: '/feed',
     id: uniqid(),
-    exact: true,
     isPrivate: true
   }
 ];
