@@ -4,7 +4,7 @@
     "builds": [
         {
             "src": "/dist",
-            "use": "@now/node"
+            "use": "@now/static-build"
         }
     ],
     "routes": [
