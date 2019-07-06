@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import GlobalStyle from './assets/styled-components/GlobalStyle';
 import Routes from './routes/Route';
-import { history } from './utils/history';
 import { ModalProvider } from './store/modal/context';
 import modalReducer from './store/modal/reducer';
 import { ThemeModeProvider } from './store/theme/context';

@@ -32,8 +32,10 @@ function Routes(): JSX.Element {
   const { location } = useContext(__RouterContext);
 
   useEffect((): void => {
-    window.firstAnimationScreen = true;
-  }, []);
+    if (location.pathname !== '/') {
+      window.firstAnimationScreen = true;
+    }
+  }, [location]);
 
   const transitions = useTransition(
     location,
@@ -60,6 +62,7 @@ function Routes(): JSX.Element {
       }
     }
   );
+
   return (
     <Route
       render={(): JSX.Element => (
