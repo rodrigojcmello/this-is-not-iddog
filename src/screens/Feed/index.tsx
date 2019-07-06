@@ -16,6 +16,14 @@ function Feed(props: RouteChildrenProps): JSX.Element {
 
   const params = new URLSearchParams(props.location.search);
 
+  const [category, setCategory] = useState(params.get('category') || 'husky');
+
+  useEffect((): void => {
+    if (params.get('category') !== category) {
+      setCategory(params.get('category'));
+    }
+  }, [props]);
+
   useEffect((): void => {
     if (params.get('id')) {
       setModal({
@@ -24,12 +32,10 @@ function Feed(props: RouteChildrenProps): JSX.Element {
       });
     }
   }, [props]);
-  
-  console.log(modal)
 
   useEffect((): void => {
     (async (): Promise<void> => {
-      const resFeed = await getFeed(params.get('category') || 'husky');
+      const resFeed = await getFeed(category);
       if ('category' in resFeed) {
         const byId = [];
         const all = [];
@@ -47,7 +53,7 @@ function Feed(props: RouteChildrenProps): JSX.Element {
         setPage(0);
       }
     })();
-  }, [props]);
+  }, [category]);
 
   const handleScroll = useCallback((): void => {
     const rest =
@@ -92,22 +98,6 @@ function Feed(props: RouteChildrenProps): JSX.Element {
           </NavLink>
         </li>
       </ul>
-      {modal.indexOf('zoomIn') > -1 && (
-        <Modal
-          title={params.get('id')}
-          id="zoomIn"
-          afterClose={(): void => {
-            history.push(`/feed?category=${params.get('category')}`);
-          }}
-          content={
-            <ModalContent
-              style={{
-                backgroundImage: `url(${feedById[params.get('id')]})`
-              }}
-            />
-          }
-        />
-      )}
       <InfinityScroll>
         {pageList.map(
           (id): JSX.Element => {
@@ -130,6 +120,22 @@ function Feed(props: RouteChildrenProps): JSX.Element {
           }
         )}
       </InfinityScroll>
+      {modal.indexOf('zoomIn') > -1 && (
+        <Modal
+          title={params.get('id')}
+          id="zoomIn"
+          afterClose={(): void => {
+            history.push(`/feed?category=${params.get('category')}`);
+          }}
+          content={
+            <ModalContent
+              style={{
+                backgroundImage: `url(${feedById[params.get('id')]})`
+              }}
+            />
+          }
+        />
+      )}
     </Content>
   );
 }

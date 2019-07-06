@@ -1,7 +1,7 @@
 import { animated } from 'react-spring';
 import styled from '../../assets/styled-components';
 
-export const ModalContainer = styled(animated.div)`
+export const ModalContainer = styled.div`
   align-items: center;
   display: flex;
   height: 100%;
@@ -16,14 +16,25 @@ export const Container = styled(animated.div)`
   background-color: ${({ theme }): string => theme.colors.contrast[0].bg};
   border-radius: 6px;
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
-  height: auto;
+  display: grid;
+  grid-template-rows: 38px auto;
+  height: calc(100vh - 4vw);
+  margin: 2vw;
   max-width: 640px;
   width: 100%;
+  @media (min-width: ${({ theme }): number => theme.sizes.mobile}px) {
+    height: 60vh;
+  }
 `;
 
 export const Header = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
+`;
+
+export const Content = styled.div`
+  display: grid;
+  margin: 2vw;
 `;
 
 export const Title = styled.h1`
@@ -52,7 +63,7 @@ export const Close = styled.button`
   }
 `;
 
-export const Background = styled.div`
+export const Background = styled(animated.div)`
   background-color: hsla(0, 0%, 50%, 0.5);
   height: 100%;
   left: 0;

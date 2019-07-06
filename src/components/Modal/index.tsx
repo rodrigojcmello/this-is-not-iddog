@@ -12,6 +12,7 @@ import {
   Background,
   Close,
   Container,
+  Content,
   Header,
   ModalContainer,
   Title
@@ -48,7 +49,7 @@ function Modal({ content, id, title, afterClose }: Props): ReactPortal {
     }
   }, [close]);
 
-  const propsModal = useSpring({
+  const propsBG = useSpring({
     opacity: close ? 0 : 1,
     from: {
       opacity: close ? 1 : 0
@@ -68,7 +69,7 @@ function Modal({ content, id, title, afterClose }: Props): ReactPortal {
   });
 
   return createPortal(
-    <ModalContainer style={propsModal}>
+    <ModalContainer>
       <Container style={propsContainer}>
         <Header>
           <Title>
@@ -78,9 +79,9 @@ function Modal({ content, id, title, afterClose }: Props): ReactPortal {
             </Close>
           </Title>
         </Header>
-        {content}
+        <Content>{content}</Content>
       </Container>
-      <Background />
+      <Background onClick={closeModal} style={propsBG} />
     </ModalContainer>,
     el
   );

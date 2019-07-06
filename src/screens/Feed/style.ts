@@ -3,13 +3,18 @@ import styled from '../../assets/styled-components';
 export const Content = styled.div`
   margin: 0 auto;
   max-width: 760px;
+  padding-left: 2vw;
+  padding-right: 2vw;
 `;
 
 export const InfinityScroll = styled.div`
   display: grid;
-  grid-column-gap: 32px;
-  grid-row-gap: 32px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: ${({ theme }): number => theme.sizes.mobile}px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const Thumb = styled.div`
@@ -24,6 +29,6 @@ export const Thumb = styled.div`
 export const ModalContent = styled.div`
   background-position: center;
   background-repeat: no-repeat;
-  height: 70vh;
+  background-size: contain;
   width: 100%;
 `;
