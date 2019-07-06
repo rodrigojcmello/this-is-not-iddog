@@ -3,7 +3,7 @@
     "name": "iddog",
     "builds": [
         {
-            "src": "index.html",
+            "src": "package.json",
             "use": "@now/node",
             "config": {
                 "distDir": "dist"

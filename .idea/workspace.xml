@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cc6ea02-dbdd-423a-97aa-d1d7afd032a3" name="Default Changelist" comment="now setup">
+    <list default="true" id="9cc6ea02-dbdd-423a-97aa-d1d7afd032a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
     </list>
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/now.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+            <state relative-caret-position="144">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -58,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+            <state relative-caret-position="96">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -184,11 +184,6 @@
             <path>
               <item name="iddog" type="b2602c69:ProjectViewProjectNode" />
               <item name="iddog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iddog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iddog" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,21 +409,7 @@
       <workItem from="1562116748501" duration="4612000" />
       <workItem from="1562200273072" duration="16296000" />
       <workItem from="1562236041512" duration="7965000" />
-      <workItem from="1562292559621" duration="22996000" />
-    </task>
-    <task id="LOCAL-00017" summary="interruptor ajustes">
-      <created>1556383745868</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1556383745870</updated>
-    </task>
-    <task id="LOCAL-00018" summary="interruptor conceito final">
-      <created>1556393184121</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1556393184121</updated>
+      <workItem from="1562292559621" duration="23383000" />
     </task>
     <task id="LOCAL-00019" summary="formulário nova lista ajustes de interação">
       <created>1556469437304</created>
@@ -759,11 +740,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562442927121</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="now test">
+      <created>1562443163144</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1562443163144</updated>
+    </task>
+    <task id="LOCAL-00067" summary="now setup">
+      <created>1562443323903</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1562443323903</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22996000" />
+    <option name="totallyTimeSpent" value="23383000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,7 +833,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Ajuste no tempo de animação da Sanfona" />
     <MESSAGE value="Adicionada nova biblioteca de local-storage" />
     <MESSAGE value="ajuste" />
     <MESSAGE value="..." />
@@ -862,6 +856,7 @@
     <MESSAGE value="fix unnecessary reload on close modal" />
     <MESSAGE value="background size contain just to mobile" />
     <MESSAGE value="added now deploy" />
+    <MESSAGE value="now test" />
     <MESSAGE value="now setup" />
     <option name="LAST_COMMIT_MESSAGE" value="now setup" />
   </component>
@@ -1003,6 +998,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1010,17 +1012,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/now.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        <state relative-caret-position="144">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
