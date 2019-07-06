@@ -105,7 +105,7 @@ module.exports = (env = { NODE_ENV: '' }) => {
       })
     );
     config.devServer = {
-      // historyApiFallback: true
+      historyApiFallback: true
     };
   }
   return config;

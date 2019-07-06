@@ -23,6 +23,11 @@ function Routes(props: RouteProps): JSX.Element {
       render={(): JSX.Element => (
         <ScreenContainer>
           <Switch location={location}>
+            <Route
+              path="/"
+              exact
+              render={(): JSX.Element => <Redirect to="/signup" />}
+            />
             {routes.map(
               ({
                 component: Component,

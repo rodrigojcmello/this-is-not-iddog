@@ -1,9 +1,12 @@
 import ls from 'local-storage';
+import { History } from 'history';
 import api from '../../index';
 import { ParamSignup, ResSignup } from './types';
-import { history } from '../../../utils/history';
 
-export const postSignup = async (email: string): Promise<void> => {
+export const postSignup = async (
+  email: string,
+  history: History
+): Promise<void> => {
   const res = await api<ResSignup, ParamSignup>('post', 'signup', { email });
   try {
     const { token } = res.user;

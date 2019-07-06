@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import GlobalStyle from './assets/styled-components/GlobalStyle';
 import Routes from './routes/Route';
 import { history } from './utils/history';
@@ -20,7 +20,7 @@ function App(): JSX.Element {
     <ThemeModeProvider initialState={initialTheme} reducer={themeReducer}>
       <ModalProvider initialState={[]} reducer={modalReducer}>
         <>
-          <Router history={history}>
+          <Router>
             <Routes />
           </Router>
           <GlobalStyle />

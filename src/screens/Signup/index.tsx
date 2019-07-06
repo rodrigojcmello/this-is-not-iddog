@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
 import { Formik, FormikProps } from 'formik';
+import { RouteChildrenProps } from 'react-router';
 import TextInput from '../../components/Form/TextInput';
 import { FormErros, FormProps } from './types';
 import { postSignup } from '../../request/services/signup';
 
-function SignUp(): JSX.Element {
+function SignUp(props: RouteChildrenProps): JSX.Element {
   return (
     <div>
       <Formik
@@ -21,7 +22,7 @@ function SignUp(): JSX.Element {
           return errors;
         }}
         onSubmit={(values): void => {
-          postSignup(values.email).then();
+          postSignup(values.email, props.history).then();
         }}
       >
         {({

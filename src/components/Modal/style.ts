@@ -18,13 +18,10 @@ export const Container = styled(animated.div)`
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
   display: grid;
   grid-template-rows: 38px auto;
-  height: calc(100vh - 4vw);
+  height: 60vh;
   margin: 2vw;
   max-width: 640px;
   width: 100%;
-  @media (min-width: ${({ theme }): number => theme.sizes.mobile}px) {
-    height: 60vh;
-  }
 `;
 
 export const Header = styled.div`
