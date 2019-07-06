@@ -33,18 +33,21 @@ function SignUp(props: RouteChildrenProps): JSX.Element {
           handleBlur,
           handleSubmit
         }: FormikProps<FormProps>): JSX.Element => (
-          <form onSubmit={handleSubmit}>
-            <TextInput
-              label="email"
-              name="email"
-              value={values.email}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={errors.email}
-              touched={touched.email}
-            />
-            <button type="submit">entrar</button>
-          </form>
+          <div>
+            <h1>IDDOG</h1>
+            <form onSubmit={handleSubmit}>
+              <TextInput
+                label="email"
+                name="email"
+                value={values.email}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={errors.email}
+                touched={touched.email}
+              />
+              <button type="submit">entrar</button>
+            </form>
+          </div>
         )}
       </Formik>
     </div>

@@ -5,6 +5,7 @@
         { "src": "package.json", "use": "@now/static-build" }
     ],
     "routes": [
-        { "src": "/[*]", "dest": "/" }
+        { "src": "/signup", "dest": "/" },
+        { "src": "/feed", "dest": "/" }
     ]
 }
