@@ -49,6 +49,12 @@ function Modal({ content, id, title, afterClose }: Props): ReactPortal {
     }
   }, [close]);
 
+  useEffect((): void => {
+    if (!title) {
+      closeModal();
+    }
+  }, [title]);
+
   const propsBG = useSpring({
     opacity: close ? 0 : 1,
     from: {

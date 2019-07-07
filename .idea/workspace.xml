@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cc6ea02-dbdd-423a-97aa-d1d7afd032a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Route.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Signup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Signup/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/index.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/Route.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+            <state relative-caret-position="1275">
+              <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -40,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/Signup/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
+            <state relative-caret-position="334">
               <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -52,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            <state relative-caret-position="352">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -100,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Modal/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+            <state relative-caret-position="402">
+              <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
               </folding>
@@ -144,10 +141,8 @@
         <option value="$PROJECT_DIR$/src/components/Modal/types.ts" />
         <option value="$PROJECT_DIR$/src/screens/Feed/index.tsx" />
         <option value="$PROJECT_DIR$/src/screens/Feed/style.ts" />
-        <option value="$PROJECT_DIR$/src/components/Modal/index.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/utils/history.ts" />
         <option value="$PROJECT_DIR$/src/request/services/signup/index.ts" />
@@ -155,7 +150,9 @@
         <option value="$PROJECT_DIR$/src/screens/Signup/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Modal/style.ts" />
         <option value="$PROJECT_DIR$/src/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/routes/Route.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Modal/index.tsx" />
       </list>
     </option>
   </component>
@@ -207,6 +204,13 @@
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
               <item name="@types" type="462c0819:PsiDirectoryNode" />
               <item name="react-router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iddog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iddog" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+              <item name="react-router-dom" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iddog" type="b2602c69:ProjectViewProjectNode" />
@@ -502,21 +506,7 @@
       <workItem from="1562200273072" duration="16296000" />
       <workItem from="1562236041512" duration="7965000" />
       <workItem from="1562292559621" duration="32933000" />
-      <workItem from="1562453133952" duration="2255000" />
-    </task>
-    <task id="LOCAL-00026" summary="modal">
-      <created>1556980248322</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1556980248323</updated>
-    </task>
-    <task id="LOCAL-00027" summary="modal">
-      <created>1557012206963</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1557012206963</updated>
+      <workItem from="1562453133952" duration="3627000" />
     </task>
     <task id="LOCAL-00028" summary="painel div">
       <created>1557086997725</created>
@@ -847,11 +837,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562449841644</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="transition between screens">
+      <created>1562455493428</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1562455493428</updated>
+    </task>
+    <task id="LOCAL-00076" summary="fixed animation on redirect / to /signup">
+      <created>1562456300779</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1562456300779</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35188000" />
+    <option name="totallyTimeSpent" value="36560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,7 +872,7 @@
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.21890146" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.21890146" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.45023698" />
@@ -884,7 +888,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Structure" order="3" visible="true" weight="0.24959612" />
+      <window_info anchor="right" id="Structure" order="3" visible="true" weight="0.24959612" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -926,8 +930,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ajuste" />
-    <MESSAGE value="..." />
     <MESSAGE value="item ativo" />
     <MESSAGE value="useSelector" />
     <MESSAGE value="item to englishˆ" />
@@ -951,7 +953,9 @@
     <MESSAGE value="now test" />
     <MESSAGE value="Replaced tittle page" />
     <MESSAGE value="now setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="now setup" />
+    <MESSAGE value="transition between screens" />
+    <MESSAGE value="fixed animation on redirect / to /signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed animation on redirect / to /signup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1099,37 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/Signup/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/now.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Modal/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#93#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,10 +1134,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Signup/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react-router-dom/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        <state relative-caret-position="352">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1169,10 +1170,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Route.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="1275">
+          <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Modal/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
           </folding>
         </state>
       </provider>
