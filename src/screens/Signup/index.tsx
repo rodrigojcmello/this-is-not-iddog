@@ -4,20 +4,21 @@ import { RouteChildrenProps } from 'react-router';
 import TextInput from '../../components/Form/TextInput';
 import { FormErros, FormProps } from './types';
 import { postSignup } from '../../request/services/signup';
+import { Content } from './style';
 
 function SignUp(props: RouteChildrenProps): JSX.Element {
   return (
-    <div>
+    <Content>
       <Formik
         initialValues={{ email: '' }}
         validate={(values): FormErros => {
           const errors: FormErros = {};
           if (!values.email) {
-            errors.email = 'você esqueceu algo algo importante!';
+            errors.email = 'digite seu e-mail para continuar';
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
-            errors.email = 'algo errado não está certo com esse e-mail!';
+            errors.email = 'esse e-mail não é válido';
           }
           return errors;
         }}
@@ -34,7 +35,6 @@ function SignUp(props: RouteChildrenProps): JSX.Element {
           handleSubmit
         }: FormikProps<FormProps>): JSX.Element => (
           <div>
-            <h1>IDDOG</h1>
             <form onSubmit={handleSubmit}>
               <TextInput
                 label="email"
@@ -45,12 +45,17 @@ function SignUp(props: RouteChildrenProps): JSX.Element {
                 error={errors.email}
                 touched={touched.email}
               />
-              <button type="submit">entrar</button>
+              <button
+                style={{ opacity: 0, position: 'absolute', left: -9999 }}
+                type="submit"
+              >
+                entrar
+              </button>
             </form>
           </div>
         )}
       </Formik>
-    </div>
+    </Content>
   );
 }
 

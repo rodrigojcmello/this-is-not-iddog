@@ -61,7 +61,7 @@ function TextInput({
       <Label htmlFor={name}>
         {label}
         <Input
-          type="text"
+          type="email"
           name={name}
           id={name}
           style={inputStyle}

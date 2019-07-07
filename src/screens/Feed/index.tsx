@@ -16,6 +16,7 @@ import {
 import Modal from '../../components/Modal';
 import { history } from '../../utils/history';
 import { useModalValue } from '../../store/modal/context';
+import Logo from '../../components/Logo';
 
 function Feed(props: RouteChildrenProps): JSX.Element {
   const [feedAll, setFeedAll] = useState([]);
