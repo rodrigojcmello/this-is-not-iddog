@@ -1,8 +1,16 @@
 import React, { EffectCallback, useCallback, useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RouteChildrenProps } from 'react-router';
 import { getFeed } from '../../request/services/feed';
-import { Content, InfinityScroll, ModalContent, Thumb } from './style';
+import {
+  Content,
+  InfinityScroll,
+  Menu,
+  MenuLink,
+  MenuList,
+  ModalContent,
+  Thumb
+} from './style';
 import Modal from '../../components/Modal';
 import { history } from '../../utils/history';
 import { useModalValue } from '../../store/modal/context';
@@ -76,28 +84,40 @@ function Feed(props: RouteChildrenProps): JSX.Element {
 
   return (
     <Content>
-      <ul>
-        <li>
-          <NavLink to={{ pathname: '/feed', search: '?category=husky' }}>
+      <Menu>
+        <MenuList>
+          <MenuLink
+            active={category === 'husky'}
+            to={{ pathname: '/feed', search: '?category=husky' }}
+          >
             husky
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={{ pathname: '/feed', search: '?category=labrador' }}>
+          </MenuLink>
+        </MenuList>
+        <MenuList>
+          <MenuLink
+            active={category === 'labrador'}
+            to={{ pathname: '/feed', search: '?category=labrador' }}
+          >
             labrador
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={{ pathname: '/feed', search: '?category=hound' }}>
+          </MenuLink>
+        </MenuList>
+        <MenuList>
+          <MenuLink
+            active={category === 'hound'}
+            to={{ pathname: '/feed', search: '?category=hound' }}
+          >
             hound
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={{ pathname: '/feed', search: '?category=pug' }}>
+          </MenuLink>
+        </MenuList>
+        <MenuList>
+          <MenuLink
+            active={category === 'pug'}
+            to={{ pathname: '/feed', search: '?category=pug' }}
+          >
             pug
-          </NavLink>
-        </li>
-      </ul>
+          </MenuLink>
+        </MenuList>
+      </Menu>
       <InfinityScroll>
         {pageList.map(
           (id): JSX.Element => {

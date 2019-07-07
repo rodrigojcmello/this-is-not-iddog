@@ -1,4 +1,25 @@
+import { Link } from 'react-router-dom';
 import styled from '../../assets/styled-components';
+
+export const Menu = styled.ul`
+  display: flex;
+  margin: 0 auto 32px auto;
+  max-width: 400px;
+  padding: 0;
+`;
+
+export const MenuList = styled.li`
+  flex: 1;
+  line-height: 42px;
+  list-style: none;
+  text-align: center;
+`;
+
+export const MenuLink = styled(Link)<{ active: boolean }>`
+  color: ${({ theme, active }): string =>
+    active ? theme.colors.primary.text : theme.colors.contrast[5].text};
+  text-decoration: none;
+`;
 
 export const Content = styled.div`
   margin: 0 auto;
@@ -21,8 +42,9 @@ export const Thumb = styled.div`
   background-color: ${({ theme }): string => theme.colors.contrast[5].bg};
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-radius: ${({ theme }): number => theme.sizes.borderRadius.small}px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.11);
   height: 150px;
 `;
 
