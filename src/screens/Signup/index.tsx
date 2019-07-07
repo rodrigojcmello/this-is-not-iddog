@@ -8,7 +8,7 @@ import { Content } from './style';
 
 function SignUp(props: RouteChildrenProps): JSX.Element {
   const refEmail = useRef<HTMLInputElement>();
-  
+
   return (
     <Content>
       <Formik

@@ -1,6 +1,12 @@
-import React, { EffectCallback, useCallback, useEffect, useState } from 'react';
+import React, {
+  EffectCallback,
+  useCallback,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
 import { Link } from 'react-router-dom';
-import { RouteChildrenProps } from 'react-router';
+import { __RouterContext, RouteChildrenProps } from 'react-router';
 import update from 'immutability-helper';
 import { config, useTransition } from 'react-spring';
 import { getFeed } from '../../request/services/feed';
@@ -14,9 +20,7 @@ import {
   Thumb
 } from './style';
 import Modal from '../../components/Modal';
-import { history } from '../../utils/history';
 import { useModalValue } from '../../store/modal/context';
-import Logo from '../../components/Logo';
 
 function Feed(props: RouteChildrenProps): JSX.Element {
   const [feedAll, setFeedAll] = useState([]);
@@ -24,6 +28,7 @@ function Feed(props: RouteChildrenProps): JSX.Element {
   const [page, setPage] = useState(0);
   const [pageList, setPageList] = useState([]);
   const [modal, setModal] = useModalValue();
+  const { history } = useContext(__RouterContext);
 
   const params = new URLSearchParams(props.location.search);
 
