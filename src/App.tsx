@@ -8,7 +8,6 @@ import modalReducer from './store/modal/reducer';
 import { ThemeModeProvider } from './store/theme/context';
 import themeReducer from './store/theme/reducer';
 import { Theme } from './store/theme/types';
-import Logo from './components/Logo';
 
 const initialTheme: Theme = window.matchMedia('(prefers-color-scheme: dark)')
   .matches

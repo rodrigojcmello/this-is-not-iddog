@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent } from 'react';
+import { ChangeEvent, FocusEvent, Ref } from 'react';
 
 export interface FormikProps<Value, Element> {
   name: string;
@@ -7,4 +7,5 @@ export interface FormikProps<Value, Element> {
   onBlur: (event: FocusEvent<Element>) => void;
   error: string | undefined;
   touched: boolean | undefined;
+  ref?: Ref<Element>;
 }

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useRef } from 'react';
 import { Formik, FormikProps } from 'formik';
 import { RouteChildrenProps } from 'react-router';
 import TextInput from '../../components/Form/TextInput';
@@ -7,6 +7,8 @@ import { postSignup } from '../../request/services/signup';
 import { Content } from './style';
 
 function SignUp(props: RouteChildrenProps): JSX.Element {
+  const refEmail = useRef<HTMLInputElement>();
+  
   return (
     <Content>
       <Formik
@@ -23,6 +25,7 @@ function SignUp(props: RouteChildrenProps): JSX.Element {
           return errors;
         }}
         onSubmit={(values): void => {
+          refEmail.current.blur();
           postSignup(values.email, props.history).then();
         }}
       >
@@ -39,6 +42,7 @@ function SignUp(props: RouteChildrenProps): JSX.Element {
               <TextInput
                 label="email"
                 name="email"
+                ref={refEmail}
                 value={values.email}
                 onBlur={handleBlur}
                 onChange={handleChange}
