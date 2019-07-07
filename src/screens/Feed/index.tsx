@@ -9,7 +9,6 @@ import {
   InfinityScroll,
   InfinityScrollWrapper,
   Menu,
-  MenuLink,
   MenuList,
   ModalContent,
   Thumb
@@ -28,8 +27,6 @@ function Feed(props: RouteChildrenProps): JSX.Element {
   const params = new URLSearchParams(props.location.search);
 
   const [category, setCategory] = useState(params.get('category') || 'husky');
-
-  console.log({ category });
 
   useEffect((): void => {
     if (params.get('category') && params.get('category') !== category) {
@@ -76,8 +73,6 @@ function Feed(props: RouteChildrenProps): JSX.Element {
     })();
   }, [category]);
 
-  console.log({ feedAll, feedById, pageList });
-
   const handleScroll = useCallback((): void => {
     const rest =
       document.body.scrollHeight - window.innerHeight - window.scrollY;
@@ -87,7 +82,13 @@ function Feed(props: RouteChildrenProps): JSX.Element {
   }, [page]);
 
   useEffect((): void => {
-    setPageList(feedAll.slice(0, 30 * (page + 1)));
+    if (feedAll && feedAll[category]) {
+      setPageList(
+        update(pageList, {
+          [category]: { $set: feedAll[category].slice(0, 30 * (page + 1)) }
+        })
+      );
+    }
   }, [page]);
 
   useEffect((): EffectCallback => {
@@ -116,37 +117,23 @@ function Feed(props: RouteChildrenProps): JSX.Element {
   return (
     <Content>
       <Menu>
-        <MenuList>
-          <MenuLink
-            activeCategory={category === 'husky'}
-            to={{ pathname: '/feed', search: '?category=husky' }}
-          >
+        <MenuList activeCategory={category === 'husky'}>
+          <Link to={{ pathname: '/feed', search: '?category=husky' }}>
             husky
-          </MenuLink>
+          </Link>
         </MenuList>
-        <MenuList>
-          <MenuLink
-            activeCategory={category === 'labrador'}
-            to={{ pathname: '/feed', search: '?category=labrador' }}
-          >
+        <MenuList activeCategory={category === 'labrador'}>
+          <Link to={{ pathname: '/feed', search: '?category=labrador' }}>
             labrador
-          </MenuLink>
+          </Link>
         </MenuList>
-        <MenuList>
-          <MenuLink
-            activeCategory={category === 'hound'}
-            to={{ pathname: '/feed', search: '?category=hound' }}
-          >
+        <MenuList activeCategory={category === 'hound'}>
+          <Link to={{ pathname: '/feed', search: '?category=hound' }}>
             hound
-          </MenuLink>
+          </Link>
         </MenuList>
-        <MenuList>
-          <MenuLink
-            activeCategory={category === 'pug'}
-            to={{ pathname: '/feed', search: '?category=pug' }}
-          >
-            pug
-          </MenuLink>
+        <MenuList activeCategory={category === 'pug'}>
+          <Link to={{ pathname: '/feed', search: '?category=pug' }}>pug</Link>
         </MenuList>
       </Menu>
       <InfinityScrollWrapper>

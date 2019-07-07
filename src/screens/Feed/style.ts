@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { animated } from 'react-spring';
 import styled from '../../assets/styled-components';
 
@@ -9,17 +8,18 @@ export const Menu = styled.ul`
   padding: 0;
 `;
 
-export const MenuList = styled.li`
+export const MenuList = styled.li<{ activeCategory: boolean }>`
   flex: 1;
   line-height: 42px;
   list-style: none;
   text-align: center;
-`;
-
-export const MenuLink = styled(Link)<{ activeCategory: boolean }>`
-  color: ${({ theme, activeCategory }): string =>
-  activeCategory ? theme.colors.primary.text : theme.colors.contrast[5].text};
-  text-decoration: none;
+  a {
+    color: ${({ theme, activeCategory }): string =>
+      activeCategory
+        ? theme.colors.primary.text
+        : theme.colors.contrast[5].text};
+    text-decoration: none;
+  }
 `;
 
 export const Content = styled.div`

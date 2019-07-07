@@ -26,7 +26,6 @@ export const Container = styled(animated.div)`
 `;
 
 export const Header = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
 `;
 
@@ -62,7 +61,7 @@ export const Close = styled.button`
 `;
 
 export const Background = styled(animated.div)`
-  background-color: hsla(0, 0%, 50%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.6);
   height: 100%;
   left: 0;
   position: fixed;
