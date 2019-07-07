@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { animated } from 'react-spring';
 import styled from '../../assets/styled-components';
 
 export const Menu = styled.ul`
@@ -15,9 +16,9 @@ export const MenuList = styled.li`
   text-align: center;
 `;
 
-export const MenuLink = styled(Link)<{ active: boolean }>`
-  color: ${({ theme, active }): string =>
-    active ? theme.colors.primary.text : theme.colors.contrast[5].text};
+export const MenuLink = styled(Link)<{ activeCategory: boolean }>`
+  color: ${({ theme, activeCategory }): string =>
+  activeCategory ? theme.colors.primary.text : theme.colors.contrast[5].text};
   text-decoration: none;
 `;
 
@@ -28,7 +29,11 @@ export const Content = styled.div`
   padding-right: 2vw;
 `;
 
-export const InfinityScroll = styled.div`
+export const InfinityScrollWrapper = styled.div`
+  position: relative;
+`;
+
+export const InfinityScroll = styled(animated.div)`
   display: grid;
   grid-column-gap: 2vw;
   grid-row-gap: 2vw;

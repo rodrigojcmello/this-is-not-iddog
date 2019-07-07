@@ -1,10 +1,13 @@
 import React, { EffectCallback, useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RouteChildrenProps } from 'react-router';
+import update from 'immutability-helper';
+import { config, useTransition } from 'react-spring';
 import { getFeed } from '../../request/services/feed';
 import {
   Content,
   InfinityScroll,
+  InfinityScrollWrapper,
   Menu,
   MenuLink,
   MenuList,
@@ -26,8 +29,10 @@ function Feed(props: RouteChildrenProps): JSX.Element {
 
   const [category, setCategory] = useState(params.get('category') || 'husky');
 
+  console.log({ category });
+
   useEffect((): void => {
-    if (params.get('category') !== category) {
+    if (params.get('category') && params.get('category') !== category) {
       setCategory(params.get('category'));
     }
   }, [props]);
@@ -55,13 +60,23 @@ function Feed(props: RouteChildrenProps): JSX.Element {
           byId[id] = image;
           all.push(id);
         });
-        setFeedAll(all);
-        setFeedById(byId);
-        setPageList(all.slice(0, 30));
+        setFeedAll(
+          update(feedAll, {
+            [category]: { $set: all }
+          })
+        );
+        setFeedById({ ...feedById, ...byId });
+        setPageList(
+          update(pageList, {
+            [category]: { $set: all.slice(0, 30) }
+          })
+        );
         setPage(0);
       }
     })();
   }, [category]);
+
+  console.log({ feedAll, feedById, pageList });
 
   const handleScroll = useCallback((): void => {
     const rest =
@@ -82,12 +97,28 @@ function Feed(props: RouteChildrenProps): JSX.Element {
     };
   }, [page]);
 
+  const transition = useTransition(pageList && [pageList[category]], category, {
+    from: {
+      position: 'absolute',
+      width: '100%',
+      opacity: 0,
+      zIndex: 0
+    },
+    enter: {
+      opacity: 1,
+      zIndex: 1
+    },
+    leave: { opacity: 0, zIndex: 0 },
+    unique: true,
+    config: config.default
+  });
+
   return (
     <Content>
       <Menu>
         <MenuList>
           <MenuLink
-            active={category === 'husky'}
+            activeCategory={category === 'husky'}
             to={{ pathname: '/feed', search: '?category=husky' }}
           >
             husky
@@ -95,7 +126,7 @@ function Feed(props: RouteChildrenProps): JSX.Element {
         </MenuList>
         <MenuList>
           <MenuLink
-            active={category === 'labrador'}
+            activeCategory={category === 'labrador'}
             to={{ pathname: '/feed', search: '?category=labrador' }}
           >
             labrador
@@ -103,7 +134,7 @@ function Feed(props: RouteChildrenProps): JSX.Element {
         </MenuList>
         <MenuList>
           <MenuLink
-            active={category === 'hound'}
+            activeCategory={category === 'hound'}
             to={{ pathname: '/feed', search: '?category=hound' }}
           >
             hound
@@ -111,35 +142,45 @@ function Feed(props: RouteChildrenProps): JSX.Element {
         </MenuList>
         <MenuList>
           <MenuLink
-            active={category === 'pug'}
+            activeCategory={category === 'pug'}
             to={{ pathname: '/feed', search: '?category=pug' }}
           >
             pug
           </MenuLink>
         </MenuList>
       </Menu>
-      <InfinityScroll>
-        {pageList.map(
-          (id): JSX.Element => {
+      <InfinityScrollWrapper>
+        {transition.map(
+          ({ item, key, props: p }): JSX.Element => {
             return (
-              <Link
-                key={id}
-                to={{
-                  pathname: '/feed',
-                  search: `?category=${params.get('category') ||
-                    'husky'}&id=${id}`
-                }}
-              >
-                <Thumb
-                  style={{
-                    backgroundImage: `url(${feedById[id]})`
-                  }}
-                />
-              </Link>
+              <InfinityScroll key={key} style={p}>
+                {item &&
+                  item.map(
+                    (id): JSX.Element => {
+                      return (
+                        <Link
+                          key={id}
+                          to={{
+                            pathname: '/feed',
+                            search: `?category=${params.get('category') ||
+                              'husky'}&id=${id}`
+                          }}
+                        >
+                          <Thumb
+                            style={{
+                              backgroundImage: `url(${feedById[id]})`
+                            }}
+                          />
+                        </Link>
+                      );
+                    }
+                  )}
+              </InfinityScroll>
             );
           }
         )}
-      </InfinityScroll>
+      </InfinityScrollWrapper>
+
       {modal.indexOf('zoomIn') > -1 && (
         <Modal
           title={params.get('id')}
