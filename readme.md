@@ -70,6 +70,6 @@ Testes
     
 Considerações Finais
 
-    - Eu quis fazer uma aplicação modelo. Tipada sem nenhum Any, apenas com Hooks. As animações ficaram boas, e tal, mas eu queria ter feito mais. Acreito que o que vocês espiram no gif eu entreguei, minha falha real foi o TDD
+    - Eu quis fazer uma aplicação modelo. Tipada sem nenhum Any, apenas com Hooks. As animações ficaram boas, e tal, mas eu queria ter feito mais. Acreito que o que vocês esperaram no gif eu entreguei, minha falha real foi o TDD
     - São pouquissimas as empresas no Brasil que usam TypeScript (com React ou Node, uma vez que Angular te obriga a usar), e também sei que TDD também é raro no brasil, eu foquei em um e esquici o outro, mas isso vai mudar.
     - Independentemente do resultado eu gostaria de um feedback, eu espero que vocês vejam as coisas que eu afirmei não ter feito por falta de tempo visando a literal falta de tempo e não preguiça, tive que trabalhar +2h por dia durante a semana, + o sábado, eu devo ter feito 70% hoje (domingo), alguém na Crefisa achou que adiantar um projeto em 3 meses seria uma boa ideia.
