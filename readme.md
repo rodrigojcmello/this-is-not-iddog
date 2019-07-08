@@ -27,7 +27,9 @@ Validação de formulário
 Requisições
 
     - Eu não esquici dos loaders! Só não achei necessário, pois a API é muito rápida e meu tempo escasso. Loaders são importantíssimo, como pós graduado em usuablidade eu sei disso, um loader só deve ser chamado após 800ms, e essa API era mais rápida que isso, ou seja, seria desncessário para ESTE teste, mas em uma aplicação real, teria que ter independentemente da resposta da API
-    - Eu também não tratei os erros, digo, provavemente não vai quebrar a aplicação se a API der uma resposta diferente, justamente pela forma que fiz as interfaces no TypeScript, mas novamente, não acho que seria esse o foco do teste. Tratamento de erro é algo importante sim, mas acabei gastando mais tempo com as animações do que tinha imaginado, ao menos ficaram legais.    
+    - Eu também não tratei os erros, digo, provavemente não vai quebrar a aplicação se a API der uma resposta diferente, justamente pela forma que fiz as interfaces no TypeScript, mas novamente, não acho que seria esse o foco do teste. Tratamento de erro é algo importante sim, mas acabei gastando mais tempo com as animações do que tinha imaginado, ao menos ficaram legais. 
+    - Por mais que seja feita apenas uma requisição por página de feed, eu fiz como infinity scroll, justamente para evitar carregar 200 imagens de uma vez sem necessidade. O scroll é ativo assim que o scroll chega a 500px do final da página.
+    - A informação do feed foi normalizada, isto é, foi guardada num state para rápido acesso, o que me permitiu fazer uma animação entre trocas de categorias, justamente por ter guardado o state do feed anterior e do atual. Neste caso eu esto cachendo o resultado do feed, o array em si, se eu tivesse terminado de configurar o service work, eu também estaria cacheado as imagens em si.
     
 Resultado Final
 
