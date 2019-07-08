@@ -1,12 +1,6 @@
-import React, {
-  EffectCallback,
-  useCallback,
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import React, { EffectCallback, useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { __RouterContext, RouteChildrenProps } from 'react-router';
+import { RouteChildrenProps } from 'react-router';
 import update from 'immutability-helper';
 import { config, useTransition } from 'react-spring';
 import { getFeed } from '../../request/services/feed';
@@ -28,7 +22,6 @@ function Feed(props: RouteChildrenProps): JSX.Element {
   const [page, setPage] = useState(0);
   const [pageList, setPageList] = useState([]);
   const [modal, setModal] = useModalValue();
-  const { history } = useContext(__RouterContext);
 
   const params = new URLSearchParams(props.location.search);
 
@@ -179,7 +172,7 @@ function Feed(props: RouteChildrenProps): JSX.Element {
           title={params.get('id')}
           id="zoomIn"
           afterClose={(): void => {
-            history.push(`/feed?category=${params.get('category')}`);
+            props.history.push(`/feed?category=${params.get('category')}`);
           }}
           content={
             <ModalContent

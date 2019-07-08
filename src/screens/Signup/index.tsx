@@ -6,7 +6,7 @@ import { FormErros, FormProps } from './types';
 import { postSignup } from '../../request/services/signup';
 import { Content } from './style';
 
-function SignUp(props: RouteChildrenProps): JSX.Element {
+function SignUp(props: Pick<RouteChildrenProps, 'history'>): JSX.Element {
   const refEmail = useRef<HTMLInputElement>();
 
   return (

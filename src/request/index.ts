@@ -1,4 +1,4 @@
-import ls from 'local-storage';
+import * as ls from 'local-storage';
 
 async function api<R, P>(
   method: 'get' | 'post',
@@ -12,14 +12,15 @@ async function api<R, P>(
       .map((k): string => `${esc(k)}=${esc(parameters[k])}`)
       .join('&');
   }
+  const headers: HeadersInit = new Headers({
+    'Content-type': 'application/json; charset=utf-8',
+    Authorization: ls.get<string>('token')
+  });
   const response = await fetch(
     `https://api-iddog.idwall.co/${endpoint}?${query}`,
     {
       method,
-      headers: {
-        'Content-type': 'application/json; charset=utf-8',
-        Authorization: ls('token')
-      }
+      headers
     }
   );
   return response.json();

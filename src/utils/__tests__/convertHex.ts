@@ -1,4 +1,4 @@
-import { convertHex } from '../index';
+import { convertHex } from '..';
 
 test('convertHex', (): void => {
   const opacity = 50;
