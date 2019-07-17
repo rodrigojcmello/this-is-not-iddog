@@ -2,7 +2,7 @@ import { FormikProps } from '../types';
 
 // Components
 
-export interface Props extends FormikProps<string, HTMLInputElement> {
+export Type Props = {
   label: string;
   autoComplete?: 'off' | 'on';
-}
+} & FormikProps<string, HTMLInputElement>;
