@@ -16,13 +16,12 @@ const TextInput = forwardRef(
   (
     {
       autoComplete,
-      error,
       label,
       name,
       onBlur,
       onChange,
-      touched,
-      value
+      value,
+      validate: { error, touched }
     }: Props,
     ref: Ref<HTMLInputElement>
   ): JSX.Element => {

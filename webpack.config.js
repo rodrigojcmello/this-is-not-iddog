@@ -80,6 +80,10 @@ module.exports = (env = { NODE_ENV: '' }) => {
         PRODUCTION: prod
       })
     ],
+    externals: {
+      react: 'React',
+      'react-dom': 'ReactDOM'
+    },
     optimization: {
       runtimeChunk: 'single',
       splitChunks: {

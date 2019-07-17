@@ -46,8 +46,10 @@ function SignUp(props: Pick<RouteChildrenProps, 'history'>): JSX.Element {
                 value={values.email}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                error={errors.email}
-                touched={touched.email}
+                validate={{
+                  error: errors.email,
+                  touched: touched.email
+                }}
               />
               <button
                 style={{ opacity: 0, position: 'absolute', left: -9999 }}
