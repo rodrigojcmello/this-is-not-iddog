@@ -1,4 +1,4 @@
-import { FormikProps } from '../types';
+import { InputProps } from '../types';
 
 // Style
 
@@ -12,6 +12,6 @@ export interface LabelFocus extends Checked {
 
 // Component
 
-export interface Props extends FormikProps<boolean, HTMLInputElement> {
+export interface Props extends InputProps<boolean, HTMLInputElement> {
   label: string;
 }

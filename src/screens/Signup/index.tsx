@@ -40,13 +40,14 @@ function SignUp(props: Pick<RouteChildrenProps, 'history'>): JSX.Element {
           <div>
             <form onSubmit={handleSubmit}>
               <TextInput
+                type="email"
                 label="email"
                 name="email"
                 ref={refEmail}
                 value={values.email}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                validate={{
+                validation={{
                   error: errors.email,
                   touched: touched.email
                 }}

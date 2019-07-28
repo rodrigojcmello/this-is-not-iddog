@@ -1,6 +1,5 @@
 import React, {
   FocusEvent,
-  memo,
   useContext,
   useState,
   forwardRef,
@@ -12,7 +11,7 @@ import { Input, Label, TextHelper, TextInputContainer } from './style';
 import { convertHex } from '../../../utils';
 import { ThemeContext } from '../../../assets/styled-components';
 
-const TextInput = forwardRef(
+export default forwardRef(
   (
     {
       autoComplete,
@@ -21,7 +20,7 @@ const TextInput = forwardRef(
       onBlur,
       onChange,
       value,
-      validate: { error, touched }
+      validation: { error, touched }
     }: Props,
     ref: Ref<HTMLInputElement>
   ): JSX.Element => {
@@ -97,5 +96,3 @@ const TextInput = forwardRef(
     );
   }
 );
-
-export default memo(TextInput);
